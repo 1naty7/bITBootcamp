@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body style="background-color: beige;">
+    <h1 class="text-center text-bg-success border border-2 border-dark">EJERCICIO 1</h1>
+    <h2 class="text-center mt-4">Suma de números</h2>
+    <div class="d-flex align-content-center align-items-center flex-column mt-5 text-center">
+        <label for="numeroUsuario" class="text-center mb-4"><h5>Ingrese un número:</h5></label>
+        <input class="w-25 form-control text-center" type="number" id="numeroUsuario">
+        <button class="mt-4 btn btn-group btn-danger mb-4 fw-bold" onclick="solicitarResultado()">Calcular suma</button>
+        <br>
+        <h6> <p id="resultado"></p></h6>
+        
+    </div>
+
+    <script>
+        
+        function solicitarResultado() {
+            let n = document.querySelector("#numeroUsuario")
+            let suma = 0
+
+            
+
+            if (n.value == '') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'No has ingresado ningún número.',
+                })
+        } else {
+            n.value = parseInt(n.value)
+            for (let i = 1; i <= n.value; i++) {
+                suma += i;
+            }
+
+            let resultado = document.querySelector("#resultado")
+            resultado.textContent = `La suma de los números del 1 al ${n.value} es: ${suma}`;
+        }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

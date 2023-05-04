@@ -1,14 +1,14 @@
 
-const user = new Persona
 
 const prom = new Promise ((resolve, reject) =>{
     let n = 0
-
-    if (n % 2==0) {
-        return resolve({ res: "resuelto" })
+    if (n % 2 ===0) {
+        return resolve({ res: "par" })
     } else {
-        return reject
-    }
+        return reject("impar")
+    } 
+    
+    
 })
 
 prom
@@ -18,3 +18,9 @@ prom
     .catch((error) => {
         console.log(error)
     })
+    
+prom = new Promise ((resolve) => {
+    if (n === 0) {
+        return resolve ("0 es 0")
+    }
+})
